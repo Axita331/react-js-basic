@@ -21,10 +21,19 @@ function Nav() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink to={'users'} style={getActiveClass}>Users</NavLink>
+                                <NavLink to={'counter'} style={getActiveClass}>Counter (Connect)</NavLink>
                             </li>
                             <li className="nav-item ps-2">
-                                <NavLink to={'albums'} style={getActiveClass}>Albums</NavLink>
+                                <NavLink to={'register'} style={getActiveClass}>Users (Connect)</NavLink>
+                            </li>
+                            <li className="nav-item ps-2">
+                                <NavLink to={'comments'} style={getActiveClass}>Comments (Connect + thunk)</NavLink>
+                            </li>
+                            <li className="nav-item ps-2">
+                                <NavLink to={'photos'} style={getActiveClass}>Photos (Hooks + thunk)</NavLink>
+                            </li>
+                            <li className="nav-item ps-2">
+                                <NavLink to={'todos'} style={getActiveClass}>Todos (Saga)</NavLink>
                             </li>
                         </ul>
                     </div>

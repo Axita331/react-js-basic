@@ -1,61 +1,24 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Users from './pages/users/Users';
-import Album from './pages/albums/Album';
 import { Fragment } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import CounterConnect from './connect/counter/Counter.connect';
+import RegisterConnect from './connect/register/register.connect';
 import Nav from './components/Nav';
-import User from './pages/users/user/User';
-import Photos from './pages/albums/Photos';
+import CommentsConnect from './connect/comments/Comments.connect';
+import Photos from './pages/photos/Photos';
+import Todos from './pages/todos/Todos.page';
 
-export const initialState = {
-  loading: false,
-  data: null,
-  error: null
-}
-export const UsersReducer = (state, action) => {
-  switch (action.type) {
-    case 'REQUEST_STARTED': {
-      return {
-        ...state,
-        loading: true,
-        data: null,
-        error: null
-      }
-    }
-    case 'REQUEST_SUCCESS': {
-      return {
-        ...state,
-        loading: false,
-        data: action.payload,
-        error: null
-      }
-    }
-    case 'REQUEST_FAILURE': {
-      return {
-        ...state,
-        loading: false,
-        data: null,
-        error: action.payload
-      }
-    }
-    default: {
-      return state;
-    }
-  }
-}
 function App() {
   return (
     <Fragment>
       <Nav />
-      <div className='container mt-3'>
-        <Routes>
-          <Route path='' element={<Users />} />
-          <Route path='/users' element={<Users />} />
-          <Route path='/users/:id' element={<User />} />
-          <Route path='/albums' element={<Album />} />
-          <Route path='/albums/:id/photos' element={<Photos />}/>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path='counter' element={<CounterConnect />}></Route>
+        <Route path='register' element={<RegisterConnect />}></Route>
+        <Route path='comments' element={<CommentsConnect />} />
+        <Route path='photos' element={<Photos />} />
+        <Route path='todos' element={<Todos />} />
+      </Routes>
     </Fragment>
   );
 }

@@ -1,3 +1,17 @@
+UI -> Event -> mapDispatchToProps (connect) -> dispatch -> reducer -> mapStateToProps (Connect) -> UI -> Re render with updated values
+
+Connect + UI + Thunk + reducer - before 16
+UI + Thunk (Simple way) + reducer - Hooks (Only Functional component)
+
+# React
+# Redux
+# axios
+# Routing
+
+# thunk - Legacy
+# saga - Medium
+# redux toolkit - start and future
+# useForm - validation - Trending and future
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
